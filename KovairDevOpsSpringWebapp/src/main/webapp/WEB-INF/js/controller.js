@@ -3,13 +3,20 @@ var DevOpsDemoApp = angular.module("DevOpsDemoApp.controllers", []);
 DevOpsDemoApp.controller("homeController", function ($scope, $http, $location, $window, devOpsService) {
 	debugger;
 	$scope.user = {};
+	$scope.errorMsg = "";
+	$scope.inValidLogin = false;
 	$scope.login = function() {
 		debugger;
 		devOpsService.login($scope.user).then(function(response){
 			debugger;
 			if(response.data.isValidUser){
+				$scope.inValidLogin = false;
 				$window.location.href = 'dashboard';
 				//$http.get('dashboard')
+			}
+			else{
+				$scope.inValidLogin = true;
+				$scope.errorMsg = "Invalid userid or password";
 			}
 		})
 	}
@@ -17,6 +24,8 @@ DevOpsDemoApp.controller("homeController", function ($scope, $http, $location, $
 
 DevOpsDemoApp.controller("dashboardController", function($scope, $http, $location, devOpsService){
 	debugger;
+	$scope.employeeList = {};
+	$scope.employeeList = devOpsService.getAllEmployee();	  
 	
 });
 

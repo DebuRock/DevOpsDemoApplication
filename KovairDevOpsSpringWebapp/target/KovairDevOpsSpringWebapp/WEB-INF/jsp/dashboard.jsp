@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
 <link rel="stylesheet" href="css/main.css" type="text/css" />
 <link rel="stylesheet" href="css/mySite.css" type="text/css" />
+<script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+<script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+<script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/4.0.6/ui-grid.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/4.0.6/ui-grid.css"  type="text/css"/>
 <script src="js/app.js"></script>
 <script src="js/controller.js"></script>
 <script src="js/service.js"></script>
@@ -35,7 +40,7 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span>Hello Patty Brown</a></li>
-                <li><a href="login.jsp" id="logoutClick"  class="btn btn-link btn-md">Log Out</a></li>
+                <li><a href="." id="logoutClick"  class="btn btn-link btn-md">Log Out</a></li>
             </ul>
         </div>
     </nav>
@@ -53,16 +58,16 @@
 		                                <img src="images/FemaleUser.jpg" id="EmpDashboardImg" class="img-rounded" alt="Image" width="150" height="150" />
 		                            </div>
 		                            <div id="emp-basic-info" class="col-sm-8 basicInfo">
-		                                <h2 class="empNameHeading">{{selectedEmployee.firstName}} {{selectedEmployee.lastName}}</h2>
-		                                Designation : {{selectedEmployee.designation}}
+		                                <h2 class="empNameHeading">Patty Brown</h2>
+		                                Designation : Software Engineer
 		                                <br />
-		                                Date of Joining : {{selectedEmployee.doj}}
+		                                Date of Joining : Delivery
 		                                <br />
-		                                Supervisor : {{selectedEmployee.supervisor}}
+		                                Supervisor : Antoniyo Goncalvos
 		                                <br />
-		                                Contact No : {{selectedEmployee.phone}}
+		                                Contact No : +14155552671
 		                                <br />
-		                                Email : {{selectedEmployee.email}}
+		                                Email : pattyb@kovair.com
 		                            </div>
 		                        </div>
 		                            <div class="well well-sm">
@@ -93,7 +98,7 @@
 		            <div class="panel panel-warning">
 		                <div class="panel-heading myHeading">All Employee List <a href="AddEmployee.html" class="linkIconSpan">Add New Employee</a> </div>
 		                <div class="panel-body">
-		                    <div id="grid1" data-ui-grid="gridOptions" class="grid"></div>
+		                    <div id="grid1" data-ui-grid="{ data: employeeList }" class="grid"></div>
 		                </div>
 		            </div>
 		        </div>

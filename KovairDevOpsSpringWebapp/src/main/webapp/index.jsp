@@ -6,6 +6,11 @@
 <script src="scripts/angular.js"></script>
 <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
 <link rel="stylesheet" href="css/LoginPage.css" type="text/css" />
+<script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+<script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+<script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/4.0.6/ui-grid.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/4.0.6/ui-grid.css"  type="text/css"/>
 <script src="js/app.js"></script>
 <script src="js/controller.js"></script>
 <script src="js/service.js"></script>
@@ -56,6 +61,9 @@
                   <div class="col-sm-offset-4 col-sm-8">
                     <button id="btnClick" type="submit" class="btn btn-primary btn-md" data-ng-click="login()">Login</button>
                   </div>
+                  <span style="color:red">
+                       <span data-ng-show="inValidLogin">{{errorMsg}}</span>
+                   </span>
                 </div>
               </form>
             </div>
